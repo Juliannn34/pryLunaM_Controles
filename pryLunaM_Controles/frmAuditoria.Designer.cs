@@ -37,12 +37,13 @@
             this.lblShowTiempo = new System.Windows.Forms.Label();
             this.timerTiempoTrabajo = new System.Windows.Forms.Timer(this.components);
             this.pnlPanelTrabajo = new System.Windows.Forms.Panel();
+            this.pnlPanelTrabajo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstCoordenadas
             // 
             this.lstCoordenadas.FormattingEnabled = true;
-            this.lstCoordenadas.Location = new System.Drawing.Point(38, 26);
+            this.lstCoordenadas.Location = new System.Drawing.Point(2, 0);
             this.lstCoordenadas.Name = "lstCoordenadas";
             this.lstCoordenadas.Size = new System.Drawing.Size(399, 290);
             this.lstCoordenadas.TabIndex = 0;
@@ -104,7 +105,8 @@
             // 
             // pnlPanelTrabajo
             // 
-            this.pnlPanelTrabajo.Location = new System.Drawing.Point(38, 26);
+            this.pnlPanelTrabajo.Controls.Add(this.lstCoordenadas);
+            this.pnlPanelTrabajo.Location = new System.Drawing.Point(38, 21);
             this.pnlPanelTrabajo.Name = "pnlPanelTrabajo";
             this.pnlPanelTrabajo.Size = new System.Drawing.Size(401, 290);
             this.pnlPanelTrabajo.TabIndex = 0;
@@ -122,9 +124,10 @@
             this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.lblShowCoordenadas);
             this.Controls.Add(this.lblShowTiempo);
-            this.Controls.Add(this.lstCoordenadas);
             this.Name = "frmAuditoria";
             this.Text = "frmAuditoria";
+            this.Load += new System.EventHandler(this.frmAuditoria_Load);
+            this.pnlPanelTrabajo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -55,7 +55,7 @@ namespace pryLunaM_Controles
 
             lblCoordenadas.Text = "X: " + e.X.ToString() + " Y: " + e.Y.ToString();             //coordenadas del mouse
 
-            using (StreamWriter swAuditar = new StreamWriter("ZonaDeCalor.txt"))                //escribir en el archivo
+            using (StreamWriter swAuditar = new StreamWriter("ZonaDeCalor.txt", true))                //escribir en el archivo
             {
                 swAuditar.WriteLine(lblCoordenadas.Text);
             }
@@ -65,6 +65,11 @@ namespace pryLunaM_Controles
         {
             tiempo++;
             lblTiempo.Text = tiempo.ToString();
+        }
+
+        private void frmAuditoria_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
